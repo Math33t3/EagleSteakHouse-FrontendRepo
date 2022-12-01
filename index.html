@@ -375,6 +375,36 @@
     <div id="kontaktDiv" class="menupunkter">
         <p>Kontakt</p>
     </div>
+    <!-- Her begynder slideshow coden-->
+<div class="slideshow">
+    <div class="mySlides fade">
+      <img src="pizza1.jpg" style="width:50%">
+    </div>
+    <div class="mySlides fade">
+      <img src="pizza2.jpg" style="width:50%">
+    </div>
+    <div class="mySlides fade">
+      <img src="pizza3.jpg" style="width:70%">
+    </div>
+    
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          slides[slideIndex-1].style.display = "block";  
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        </script>
 </body>
 
 </html>

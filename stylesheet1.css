@@ -91,6 +91,10 @@ td {
 .table-div table{
     width: 100%
 }
+.mySlides{
+    margin-left: 25%;
+    width:100%
+}
 
 /* tr {
     color: blue;
