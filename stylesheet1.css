@@ -5,37 +5,49 @@ body {
     background-attachment: fixed;
 }
 
-#topH1{
+#topH1 {
     font-size: 60px;
     margin-top: 2px;
     margin-bottom: 5px;
-    
+
 }
 
-#eagle{
-    
+#eagle {
+
     height: 220;
     margin-left: 15%;
-    margin-right:  15%;
-    
+    margin-right: 15%;
+
 }
 
-.topheader{
-    background-color:whitesmoke;
-    border: 2px solid black ;
+.topheader {
+    background-color: whitesmoke;
+    border: 2px solid black;
     border-radius: 15px;
     padding-top: 2px;
-    
-    }
+
+}
+
+.td {
+    border-radius: 5px;
+}
+
+.topbar-item {
+    color: rgb(0, 0, 0);
+}
+
+.topbar-item td{
+    border: none;
+}
 
 
-#logo1{
+#logo1 {
     height: 200px;
     width: 200px;
     float: left;
 }
 
-#logo2{
+#logo2 {
     height: 200px;
     width: 200px;
     float: right;
@@ -49,24 +61,25 @@ body {
 }
 
 #logo2div {
-    
+
     position: absolute;
     top: 0%;
     right: 0%;
 }
 
-.menupunkter{
+.menupunkter {
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
     font-size: 20px;
     background-color: whitesmoke;
     width: 50%
 }
 
-th, td {
+th,
+td {
     border: 1px solid black;
-  }
+}
 
-#table-div  {
+#table-div {
     width: 100%;
 
 }
@@ -77,4 +90,3 @@ th, td {
     font-family: Garamond, serif;
     /*font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 }*/
-
