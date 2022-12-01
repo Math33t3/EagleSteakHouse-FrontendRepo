@@ -68,6 +68,8 @@ body {
 }
 
 .menupunkter {
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
     font-size: 20px;
     background-color: whitesmoke;
@@ -79,7 +81,7 @@ td {
     border: 1px solid black;
 }
 
-#table-div {
+.table-div {
     width: 100%;
 
 }
