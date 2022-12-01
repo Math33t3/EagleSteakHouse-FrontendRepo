@@ -1,5 +1,5 @@
 body {
-    background-image: URL("facade2.jpg");
+    background-image: URL("Toscana2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -45,12 +45,14 @@ body {
     height: 200px;
     width: 200px;
     float: left;
+    margin-left: 25px;
 }
 
 #logo2 {
     height: 220px;
     width: 200px;
     float: right;
+    margin-right: 25px;
 }
 
 #logo1div {
