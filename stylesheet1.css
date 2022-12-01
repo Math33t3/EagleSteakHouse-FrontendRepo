@@ -73,7 +73,12 @@ body {
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
     font-size: 20px;
     background-color: whitesmoke;
-    width: 50%
+    width: 65%;   
+    margin-left :17.5%;
+    
+   
+    
+    
 }
 
 th,
@@ -81,9 +86,8 @@ td {
     border: 1px solid black;
 }
 
-.table-div {
-    width: 100%;
-
+.table-div table{
+    width: 100%
 }
 
 /* tr {
