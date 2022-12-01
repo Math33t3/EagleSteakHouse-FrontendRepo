@@ -5,14 +5,56 @@ body {
     background-attachment: fixed;
 }
 
-#eagle-right {
+#topH1{
+    font-size: 60px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    
+}
+
+#eagle{
+    
+    height: 220;
+    margin-left: 15%;
+    margin-right:  15%;
+    
+}
+
+.topheader{
+    background-color:whitesmoke;
+    border: 2px solid black ;
+    border-radius: 15px;
+    padding-top: 2px;
+    
+    }
+
+
+#logo1{
+    height: 200px;
+    width: 200px;
+    float: left;
+}
+
+#logo2{
+    height: 200px;
+    width: 200px;
     float: right;
 }
 
-#logo{
-    height: 200px;
-    width: 200px;
+#logo1div {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
 }
+
+#logo2div {
+    
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
 .menupunkter{
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
     font-size: 20px;
