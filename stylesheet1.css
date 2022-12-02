@@ -87,6 +87,11 @@ body {
     border-radius: 2vh;    
 }
 
+.menupunkter td,th{
+    
+    font-size: 22px;
+}
+
 th,
 td {
     border: none;/*1px solid black;*/
