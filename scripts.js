@@ -17,7 +17,7 @@ window.onclick = function(event) {
     }
   }
 }
-
+//Forsøg på fint galleri
 let slideIndex = 1;
 showSlides(slideIndex);
 
