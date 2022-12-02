@@ -77,15 +77,12 @@ body {
     background-color: whitesmoke;
     width: 65%;   
     margin-left :17.5%;
-    
-   
-    
-    
+    border-radius: 2vh;    
 }
 
 th,
 td {
-    border: 1px solid black;
+    border: none;/*1px solid black;*/
 }
 
 .table-div table{
@@ -98,6 +95,7 @@ td {
 .googlePin{
     width: 50%;
     margin-left: 25%;
+    
 }
 
 /* tr {
