@@ -17,10 +17,13 @@ body {
     height: 220;
     margin-left: 15%;
     margin-right: 15%;
+    margin-bottom: 100px;
 
 }
 
 .topheader {
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    font-size: 20px;
     background-color: whitesmoke;
     border: 2px solid black;
     border-radius: 15px;
@@ -83,6 +86,7 @@ body {
 th,
 td {
     border: none;/*1px solid black;*/
+    padding: 20px;
 }
 
 .table-div table{
