@@ -22,42 +22,32 @@
             </center>
             <div class="topbar">
                 <table>
-                    <td class="td">
-                        <a href="#pizzaDiv" class="topbar-item"><b>PIZZA</b></a>
-                    </td>
-                    <td class="td">
-                        <a href="#frokostTilbud" class="topbar-item">FROKOST TILBUD</a>
-                    </td>
-                    <td class="td">
-                        <a href="#burgerDiv" class="topbar-item">BURGER</a>
-                    </td>
-                    <td class="td">
-                        <a href="#dishDiv" class="topbar-item">RETTER</a>
-                    </td>
-                    <td class="td">
-                        <a href="#drinkDiv" class="topbar-item">DRIKKEVARE</a>
-                    </td>
-                    <td class="td">
-                        <a href="#durumDiv" class="topbar-item">DURUM</a>
-                    </td>
-                    <td class="td">
-                        <a href="#menuDiv" class="topbar-item">MENUER</a>
-                    </td>
-                    <td class="td">
-                        <a href="#pitaDiv" class="topbar-item">PITA</a>
-                    </td>
-                    <td class="td">
-                        <a href="#pizzasandwichDiv" class="topbar-item">PIZZASANDWICH</a>
-                    </td>
-                    <td class="td">
-                        <a href="#turkbreadDiv" class="topbar-item">TYRKISK BRØD</a>
-                    </td>
-                    <td class="td">
-                        <a href="#pommesfritesDiv" class="topbar-item">POMMES FRITES</a>
-                    </td>
-                    <td class="td">
-                        <a href="#kontaktDiv" class="topbar-item">KONTAKT</a>
-                    </td>
+                    <tr>
+                        <td>
+                            <div class="dropdown">
+                                <button onclick="myFunction()" class="dropbtn">MENU</button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#pizzaDiv" class="topbar-item"><b>PIZZA</b></a>
+                                    <a href="#frokostTilbud" class="topbar-item">FROKOST TILBUD</a>
+                                    <a href="#burgerDiv" class="topbar-item">BURGER</a>
+                                    <a href="#dishDiv" class="topbar-item">RETTER</a>
+                                    <a href="#drinkDiv" class="topbar-item">DRIKKEVARE</a>
+                                    <a href="#durumDiv" class="topbar-item">DURUM</a>
+                                    <a href="#menuDiv" class="topbar-item">MENUER</a>
+                                    <a href="#pitaDiv" class="topbar-item">PITA</a>
+                                    <a href="#pizzasandwichDiv" class="topbar-item">PIZZASANDWICH</a>
+                                    <a href="#turkbreadDiv" class="topbar-item">TYRKISK BRØD</a>
+                                    <a href="#pommesfritesDiv" class="topbar-item">POMMES FRITES</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="td">
+                            <a href="#kontaktDiv" class="topbar-item">KONTAKT</a>
+                        </td>
+                        <td class="td">
+                            <a href="#galleriDiv" class="topbar-item">GALLERI</a>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -75,7 +65,7 @@
         <div class="table-div">
             <table style="width: 100%;">
                 <tr>
-                    <th >Pizza</th>
+                    <th>Pizza</th>
                     <th>Normal-Pris</th>
                     <th>Familie-Pris</th>
                 </tr>
@@ -102,20 +92,20 @@
 
                 <tr>
                     <td><b>4. Quattro Stagioni</b> <br>Tomat, ost, skinke, champignon, pepperoni</td>
-                    <td  class="pris">60-</td>
-                    <td  class="pris">110-</td>
+                    <td class="pris">60-</td>
+                    <td class="pris">110-</td>
                 </tr>
 
                 <tr>
                     <td><b>5. Italiana</b> <br>Tomat, Ost, kødsauce, løg</td>
-                    <td  class="pris">55-</td>
-                    <td  class="pris">105-</td>
+                    <td class="pris">55-</td>
+                    <td class="pris">105-</td>
                 </tr>
 
                 <tr>
                     <td><b>6. Milano</b> <br>Tomat, ost, kylling, rucola, pesto</td>
-                    <td  class="pris">60-</td>
-                    <td  class="pris">110-</td>
+                    <td class="pris">60-</td>
+                    <td class="pris">110-</td>
                 </tr>
 
                 <tr>
@@ -370,45 +360,119 @@
         </div>
     </div>
     <div id="kontaktDiv" class="menupunkter">
-        <p>Kontakt</p>
-        <div id="smileydata">
-            <a href="http://www.findsmiley.dk/508817"> <img src="smileys.jpg"></a>
+        <div id="table-div">
+            <table>
+                <tr>
+                <th style="width: 20%;"></th>
+                <th style="width: 60%;">TELEFON</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Ring og bestil</td>
+                <td style="size: 36px;"><center><b>35 37 07 27</b></center></td>
+                <td><a href="http://www.findsmiley.dk/508817"> <img src="smileys.jpg"></a></td>
+            </tr>
+            </table>
+            <table>
+                <tr>
+                    <th style="width: 80%;">ÅBNINGSTIDER</th>
+                    <th></th>
+                    
+                </tr>
+                <tr>
+                    <td>Søndag - Mandag</td>
+                    <td>11:00 - 24:00</td>
+                    
+                </tr>
+                <tr>
+                    <td>Fredag - Lørdag</td>
+                    <td>11:00 - 05:00</td>
+                    
+                </tr>
+            </table>
+           
+        </div>
+
+        <div class="googlePin">
+            <p>
+                <b>Her Bor Vi</b>
+            </p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.133141542963!2d12.545316224291762!3d55.6866729514242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465253a8d170452b%3A0x5ffbc7849a68a404!2sEAGLE%20STEAK%20HOUSE!5e0!3m2!1sda!2sdk!4v1669979558137!5m2!1sda!2sdk"
+                width="70%" height="450" style="border:0;" allowfullscreen="" loading="lazy" margin-left="2%"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </div>
-    <div class="googlePin">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.132269986015!2d12.547415815335004!3d55.68668810455749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465253a8d1572e89%3A0x19cf1c662f6bb22f!2sRantzausgade%2032%2C%202200%20K%C3%B8benhavn!5e0!3m2!1sda!2sdk!4v1669971183355!5m2!1sda!2sdk" 
-    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <div id="galleriDiv" class="menupunkter">
+        <!-- Container for the image gallery -->
+<div class="container">
+
+    <!-- Full-width images with number text -->
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+        <img src="img_woods_wide.jpg" style="width:100%">
     </div>
-    <!-- Her begynder slideshow coden-->
-<div class="slideshow">
-    <div class="mySlides fade">
-      <img src="pizza1.jpg" style="width:50%" alt="notfound">
+  
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+        <img src="img_5terre_wide.jpg" style="width:100%">
     </div>
-    <div class="mySlides fade">
-      <img src="pizza2.jpg" style="width:50%" alt="notfound">
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+        <img src="img_mountains_wide.jpg" style="width:100%">
     </div>
-    <div class="mySlides fade">
-      <img src="pizza3.jpg" style="width:50%" alt="notfound">
+  
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+        <img src="img_lights_wide.jpg" style="width:100%">
     </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+        <img src="img_nature_wide.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+        <img src="img_snow_wide.jpg" style="width:100%">
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+    <!-- Image text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  
+    <!-- Thumbnail images -->
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="pizza1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="pizza2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="pizza3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="facade.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="fastfood2.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="Toscana.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+      </div>
+    </div>
+  </div>
     </div>
     
-    <script>
-        let slideIndex = 0;
-        showSlides();
-        
-        function showSlides() {
-          let i;
-          let slides = document.getElementsByClassName("mySlides");
-          
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-          }
-          slideIndex++;
-          if (slideIndex > slides.length) {slideIndex = 1}    
-          slides[slideIndex-1].style.display = "block";  
-          setTimeout(showSlides, 2000); // Change image every 2 seconds
-        }
-        </script>
 </body>
 
 </html>
