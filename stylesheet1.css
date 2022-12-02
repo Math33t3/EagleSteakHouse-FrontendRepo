@@ -106,6 +106,10 @@ td {
     
 }
 
+#smileydata{
+    float:right;
+}
+
 /* tr {
     color: blue;
     font-size: 20px;
