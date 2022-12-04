@@ -77,6 +77,7 @@ class JsGet {
 
     async getBurgerList2() {
         //settet skal sorteres i backend
+        //kan også laves på samme måde som vores dropdown hvis det er pænere
         let url = "http://localhost:8080/getBurgerList";
 
         let response = await fetch(url);
@@ -86,48 +87,50 @@ class JsGet {
     burgertableCreate() {
 
 
-        const body = document.body;
+        const body = document.getElementById('burgerDiv3');
 
         const tbl = document.createElement('table');
         tbl.classList.add("menupunkter");
         tbl.classList.add("table-div");
 
-        for(let i = 0; i < 4; i++){
-            if(i==0){
-                tbl.appendChild(document.createTextNode('Burgere'));
-            }
-            if(i==1){
-                tbl.appendChild(document.createTextNode(''));
-            }
-            if(i==2){
-                tbl.appendChild(document.createTextNode('Indhold'));
-            }
-            if(i==3){
-                tbl.appendChild(document.createTextNode('Pris'));
-            }
-            
-        }
+        //laver et nested for loop. i bestmmer hvor mange linjer tablen er
+        //j bestemmer hvor mange td der er i hver linje a tablen
         
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < this.data.length; i++) {
             const tr = tbl.insertRow();
 
-            for (let j = 0; j < 4; j++) {
-                if (j == 0) {
+            for (let j = 0; j < 5; j++) {
+                // starter med at lave første linje som beskriver indholdet 
+                if(j==0 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Burger'));
+                } if(j==1 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Navn'));
+                } if(j==2 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Indhold'));
+                } if(j==3 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Pris'));
+                } 
+
+                if (j == 1 && i>0) {
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(this.data[i].id));
-                } if (j == 1) {
+                } if (j == 2 && i>0) {
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(this.data[i].name));
-                } if (j == 2) {
+                } if (j == 3 && i>0) {
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(this.data[i].description));
-                } if (j == 3) {
+                } if (j == 4 && i>0) {
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(this.data[i].price));
                 }
             }
         }
-
+        body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
         body.appendChild(tbl);
     }
 }
