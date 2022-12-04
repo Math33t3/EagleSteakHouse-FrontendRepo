@@ -76,6 +76,7 @@ class JsGet {
     }
 
     async getBurgerList2() {
+        //settet skal sorteres i backend
         let url = "http://localhost:8080/getBurgerList";
 
         let response = await fetch(url);
