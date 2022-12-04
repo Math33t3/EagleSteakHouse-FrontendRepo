@@ -59,8 +59,8 @@ class JsGet {
       let url = "http://localhost:8080/getPizzaList";
   
       let response = await fetch(url);
-      this.data = await response.json()
-      this.updateMyPizzaUI()
+      this.data = await response.json();
+      this.updateMyPizzaUI();
     }
   
     updateMyPizzaUI() {
