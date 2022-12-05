@@ -155,7 +155,7 @@ class JsGet {
         //laver et nested for loop. i bestmmer hvor mange rows tablen er
         //j bestemmer hvor mange kolonner der er i hver linje a tablen
         
-        for (let i = 0; i < this.data.length; i++) {
+        for (let i = 0; i < this.data.length+1; i++) {
             const tr = tbl.insertRow();
 
             for (let j = 0; j < 5; j++) {
@@ -176,16 +176,16 @@ class JsGet {
 
                 if (j == 1 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].id));
+                    td.appendChild(document.createTextNode(this.data[i-1].id));
                 } if (j == 2 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].name));
+                    td.appendChild(document.createTextNode(this.data[i-1].name));
                 } if (j == 3 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].description));
+                    td.appendChild(document.createTextNode(this.data[i-1].description));
                 } if (j == 4 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].price));
+                    td.appendChild(document.createTextNode(this.data[i-1].price));
                 }
             }
         }
@@ -211,7 +211,7 @@ class JsGet {
         //laver et nested for loop. i bestmmer hvor mange rows tablen er
         //j bestemmer hvor mange kolonner der er i hver linje a tablen
         
-        for (let i = 0; i < this.data.length; i++) {
+        for (let i = 0; i < this.data.length+1; i++) {
             const tr = tbl.insertRow();
 
             for (let j = 0; j < 5; j++) {
@@ -232,16 +232,16 @@ class JsGet {
 
                 if (j == 1 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].id));
+                    td.appendChild(document.createTextNode(this.data[i-1].id));
                 } if (j == 2 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].name));
+                    td.appendChild(document.createTextNode(this.data[i-1].name));
                 } if (j == 3 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].description));
+                    td.appendChild(document.createTextNode(this.data[i-1].description));
                 } if (j == 4 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].price));
+                    td.appendChild(document.createTextNode(this.data[i-1].price));
                 }
             }
         }
