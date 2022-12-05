@@ -248,6 +248,118 @@ class JsGet {
         body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
         body.appendChild(tbl);
     }
+
+    async getDrinkList() {
+        let url = "http://localhost:8080/getDrinkList";
+
+        let response = await fetch(url);
+        this.data = await response.json()
+        this.drinktableCreate()
+    }
+ 
+    drinktableCreate() {
+        const body = document.getElementById('drinkDiv3');
+
+        const tbl = document.createElement('table');
+        tbl.classList.add("menupunkter");
+        tbl.classList.add("table-div");
+        
+        //laver et nested for loop. i bestmmer hvor mange rows tablen er
+        //j bestemmer hvor mange kolonner der er i hver linje a tablen
+        
+        for (let i = 0; i < this.data.length+1; i++) {
+            const tr = tbl.insertRow();
+
+            for (let j = 0; j < 5; j++) {
+                // starter med at lave første linje som beskriver indholdet 
+                if(j==0 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Drikkevare'));
+                } if(j==1 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==2 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==3 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Pris'));
+                } 
+
+                if (j == 1 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].id));
+                } if (j == 2 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].name));
+                } if (j == 3 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].description));
+                } if (j == 4 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].price));
+                }
+            }
+        }
+        body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
+        body.appendChild(tbl);
+    }
+
+    async getDurumList() {
+        let url = "http://localhost:8080/getDurumList";
+
+        let response = await fetch(url);
+        this.data = await response.json()
+        this.durumtableCreate()
+    }
+ 
+    durumtableCreate() {
+        const body = document.getElementById('durumDiv3');
+
+        const tbl = document.createElement('table');
+        tbl.classList.add("menupunkter");
+        tbl.classList.add("table-div");
+        
+        //laver et nested for loop. i bestmmer hvor mange rows tablen er
+        //j bestemmer hvor mange kolonner der er i hver linje a tablen
+        
+        for (let i = 0; i < this.data.length+1; i++) {
+            const tr = tbl.insertRow();
+
+            for (let j = 0; j < 5; j++) {
+                // starter med at lave første linje som beskriver indholdet 
+                if(j==0 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Durum'));
+                } if(j==1 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==2 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==3 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Pris'));
+                } 
+
+                if (j == 1 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].id));
+                } if (j == 2 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].name));
+                } if (j == 3 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].description));
+                } if (j == 4 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].price));
+                }
+            }
+        }
+        body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
+        body.appendChild(tbl);
+    }
 }
 
 var jsGet = new JsGet()
