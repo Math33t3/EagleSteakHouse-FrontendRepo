@@ -96,7 +96,7 @@ class JsGet {
         //laver et nested for loop. i bestmmer hvor mange rows tablen er
         //j bestemmer hvor mange kolonner der er i hver linje a tablen
         
-        for (let i = 0; i < this.data.length; i++) {
+        for (let i = 0; i < this.data.length+1; i++) {
             const tr = tbl.insertRow();
 
             for (let j = 0; j < 5; j++) {
@@ -117,16 +117,16 @@ class JsGet {
 
                 if (j == 1 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].id));
+                    td.appendChild(document.createTextNode(this.data[i-1].id));
                 } if (j == 2 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].name));
+                    td.appendChild(document.createTextNode(this.data[i-1].name));
                 } if (j == 3 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].description));
+                    td.appendChild(document.createTextNode(this.data[i-1].description));
                 } if (j == 4 && i>0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i].price));
+                    td.appendChild(document.createTextNode(this.data[i-1].price));
                 }
             }
         }
@@ -192,17 +192,69 @@ class JsGet {
         body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
         body.appendChild(tbl);
     }
+
+    async getDishList() {
+        let url = "http://localhost:8080/getDishList";
+
+        let response = await fetch(url);
+        this.data = await response.json()
+        this.dishtableCreate()
+    }
+ 
+    dishtableCreate() {
+        const body = document.getElementById('dishDiv3');
+
+        const tbl = document.createElement('table');
+        tbl.classList.add("menupunkter");
+        tbl.classList.add("table-div");
+        
+        //laver et nested for loop. i bestmmer hvor mange rows tablen er
+        //j bestemmer hvor mange kolonner der er i hver linje a tablen
+        
+        for (let i = 0; i < this.data.length; i++) {
+            const tr = tbl.insertRow();
+
+            for (let j = 0; j < 5; j++) {
+                // starter med at lave første linje som beskriver indholdet 
+                if(j==0 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Andre'));
+                } if(j==1 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Retter'));
+                } if(j==2 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==3 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Pris'));
+                } 
+
+                if (j == 1 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i].id));
+                } if (j == 2 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i].name));
+                } if (j == 3 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i].description));
+                } if (j == 4 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i].price));
+                }
+            }
+        }
+        body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
+        body.appendChild(tbl);
+    }
 }
-//Hertil :)
-
-
-
-
-
-
 
 var jsGet = new JsGet()
 
+
+
+//dette er et forsøg på en anden slags table
 function tableCreate(row, col){
     let body = document.body;
     let tbl  = document.createElement('table');
