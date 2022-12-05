@@ -51,6 +51,7 @@ class JsGet {
 
         // lave et loop der udskriver dem i rækkefølge efter id så nr 1 altid er først.
     }
+
     tableCreate() {
 
 
@@ -75,8 +76,8 @@ class JsGet {
         body.appendChild(tbl);
     }
 
+    // herfra skal getList og tableCreate metoder skrives om til at tage imod de andre typer af objekter. :)
     async getBurgerList2() {
-        //settet skal sorteres i backend
         //kan også laves på samme måde som vores dropdown hvis det er pænere
         let url = "http://localhost:8080/getBurgerList";
 
@@ -84,17 +85,16 @@ class JsGet {
         this.data = await response.json()
         this.burgertableCreate()
     }
+ 
     burgertableCreate() {
-
-
         const body = document.getElementById('burgerDiv3');
 
         const tbl = document.createElement('table');
         tbl.classList.add("menupunkter");
         tbl.classList.add("table-div");
-
-        //laver et nested for loop. i bestmmer hvor mange linjer tablen er
-        //j bestemmer hvor mange td der er i hver linje a tablen
+        
+        //laver et nested for loop. i bestmmer hvor mange rows tablen er
+        //j bestemmer hvor mange kolonner der er i hver linje a tablen
         
         for (let i = 0; i < this.data.length; i++) {
             const tr = tbl.insertRow();
@@ -134,6 +134,8 @@ class JsGet {
         body.appendChild(tbl);
     }
 }
+//Hertil :)
+
 var jsGet = new JsGet()
 
 function tableCreate(row, col){
