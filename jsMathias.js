@@ -99,22 +99,7 @@ class JsGet {
         for (let i = 0; i < this.data.length+1; i++) {
             const tr = tbl.insertRow();
 
-            for (let j = 0; j < 5; j++) {
-                // starter med at lave første linje som beskriver indholdet 
-                if(j==0 && i==0){
-                    const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Burger'));
-                } if(j==1 && i==0){
-                    const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Navn'));
-                } if(j==2 && i==0){
-                    const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Indhold'));
-                } if(j==3 && i==0){
-                    const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Pris'));
-                } 
-
+            for (let j = 0; j < 5; j++) {        
                 if (j == 1 && i>0) {
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(this.data[i-1].id));
@@ -130,11 +115,11 @@ class JsGet {
                 }
             }
         }
+
         body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
         body.appendChild(tbl);
+        
     }
-
-//Hertil :)
 
 
        async getChipsList() {
@@ -142,6 +127,7 @@ class JsGet {
 
         let response = await fetch(url);
         this.data = await response.json()
+        document.getElementById("chipsTableBtn").style.display="none";
         this.chipstableCreate()
     }
  
@@ -162,16 +148,18 @@ class JsGet {
                 // starter med at lave første linje som beskriver indholdet 
                 if(j==0 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Pommes'));
+                    td.appendChild(document.createTextNode(' '));
                 } if(j==1 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Frites'));
+                    td.appendChild(document.createTextNode('Pommes Frites'));
+                    td.style.fontWeight="bold"
+                    td.style.fontSize="26px"
                 } if(j==2 && i==0){
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(' '));
                 } if(j==3 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Pris'));
+                    td.appendChild(document.createTextNode(' '));
                 } 
 
                 if (j == 1 && i>0) {
@@ -198,6 +186,7 @@ class JsGet {
 
         let response = await fetch(url);
         this.data = await response.json()
+        document.getElementById("dishTableBtn").style.display="none";
         this.dishtableCreate()
     }
  
@@ -218,16 +207,18 @@ class JsGet {
                 // starter med at lave første linje som beskriver indholdet 
                 if(j==0 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Andre'));
+                    td.appendChild(document.createTextNode(' '));
                 } if(j==1 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Retter'));
+                    td.appendChild(document.createTextNode('Andre Retter'));
+                    td.style.fontWeight="bold"
+                    td.style.fontSize="26px"
                 } if(j==2 && i==0){
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(' '));
                 } if(j==3 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Pris'));
+                    td.appendChild(document.createTextNode(' '));
                 } 
 
                 if (j == 1 && i>0) {
@@ -254,6 +245,7 @@ class JsGet {
 
         let response = await fetch(url);
         this.data = await response.json()
+        document.getElementById("drinkTableBtn").style.display="none";
         this.drinktableCreate()
     }
  
@@ -274,16 +266,18 @@ class JsGet {
                 // starter med at lave første linje som beskriver indholdet 
                 if(j==0 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Drikkevare'));
+                    td.appendChild(document.createTextNode(' '));
                 } if(j==1 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(' '));
+                    td.appendChild(document.createTextNode('Drikkevare'));
+                    td.style.fontWeight="bold"
+                    td.style.fontSize="26px"
                 } if(j==2 && i==0){
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(' '));
                 } if(j==3 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Pris'));
+                    td.appendChild(document.createTextNode(' '));
                 } 
 
                 if (j == 1 && i>0) {
@@ -310,6 +304,7 @@ class JsGet {
 
         let response = await fetch(url);
         this.data = await response.json()
+        document.getElementById("durumTableBtn").style.display="none";
         this.durumtableCreate()
     }
  
@@ -330,16 +325,18 @@ class JsGet {
                 // starter med at lave første linje som beskriver indholdet 
                 if(j==0 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Durum'));
+                    td.appendChild(document.createTextNode(' '));
                 } if(j==1 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(' '));
+                    td.appendChild(document.createTextNode('Durum'));
+                    td.style.fontWeight="bold"
+                    td.style.fontSize="26px"
                 } if(j==2 && i==0){
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(' '));
                 } if(j==3 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Pris'));
+                    td.appendChild(document.createTextNode(' '));
                 } 
 
                 if (j == 1 && i>0) {
@@ -360,6 +357,68 @@ class JsGet {
         body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
         body.appendChild(tbl);
     }
+
+    async getBurgerList3() {
+        //kan også laves på samme måde som vores dropdown hvis det er pænere
+        let url = "http://localhost:8080/getBurgerList";
+
+        let response = await fetch(url);
+        this.data = await response.json()
+        document.getElementById("burgerTableBtn").style.display="none";
+        this.burgertableCreate2()
+    }
+ 
+    burgertableCreate2() {
+        const body = document.getElementById('burgerDiv3');
+
+        const tbl = document.createElement('table');
+        tbl.classList.add("menupunkter");
+        tbl.classList.add("table-div");
+        
+        //laver et nested for loop. 
+        //i bestemmer hvor mange rows tabellen har
+        //j bestemmer hvor mange kolonner der er i hver linje af tabellen
+        
+        for (let i = 0; i < this.data.length+1; i++) {
+            const tr = tbl.insertRow();
+
+            for (let j = 0; j < 5; j++) {     
+                
+                if(j==0 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==1 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Burgere'));
+                    td.style.fontWeight="bold"
+                    td.style.fontSize="26px"
+                } if(j==2 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==3 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } 
+                if (j == 1 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].id));
+                } if (j == 2 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].name));
+                } if (j == 3 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].description));
+                } if (j == 4 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].price));
+                }
+            }
+        }
+        
+        body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
+        body.appendChild(tbl);
+    }   
+
 }
 
 var jsGet = new JsGet()

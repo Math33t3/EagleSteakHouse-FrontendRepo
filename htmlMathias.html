@@ -8,33 +8,34 @@
     <script src="jsMathias.js"></script>
 </head>
 <body>
-    <div></div>
-    <button onclick="jsGet.getPizzaList()">Pizza</button>
-    <div id="pizzaDiv2"></div>
-    
-    <div></div>
-    <button onclick="jsGet.getBurgerList()">Burger</button>
-    <div id="burgerDiv2"></div>
 
-    <div></div>
-    <button onclick="jsGet.getBurgerList2()">Burger Table</button>
+    <div class="menupunkter" style="display:table;">
+        <a id="burgerTableBtn" style="display:table-cell;text-decoration: none;padding:50px;text-align:center;"
+     onclick="jsGet.getBurgerList3()"><b>Burgere</b></a>
     <div id="burgerDiv3"></div>
+    </div>
     
-    <div></div>
-    <button onclick="jsGet.getChipsList()">Chips Table</button>
-    <div id="chipsDiv3"></div>
-
-    <div></div>
-    <button onclick="jsGet.getDishList()">Dish Table</button>
-    <div id="dishDiv3"></div>
-
-    <div></div>
-    <button onclick="jsGet.getDrinkList()">Drink Table</button>
-    <div id="drinkDiv3"></div>
+    <div class="menupunkter table-div" style="display:table;">
+        <a id="chipsTableBtn" style="display:table-cell;text-decoration: none;padding:50px;text-align:center;"
+     onclick="jsGet.getChipsList()"><b>Pommes Frites</b></a>
+    <div id="chipsDiv3" style="width: 80%"></div>
+</div>
 
     <div class="menupunkter table-div" style="display:table;">
-        <a style="display:table-cell;text-decoration: none;padding:50px;text-align:center;" 
-        onclick="jsGet.getDurumList()">Durum Table</a>
+        <a id="dishTableBtn" style="display:table-cell;text-decoration: none;padding:50px;text-align:center;"
+     onclick="jsGet.getDishList()"><b>Andre Retter</b></a>
+    <div id="dishDiv3" style="width: 80%"></div>
+</div>
+
+    <div class="menupunkter table-div" style="display:table; height: 15px;">
+        <a id="drinkTableBtn" style="display:table-cell;text-decoration: none;padding:50px;text-align:center;"
+     onclick="jsGet.getDrinkList()"><b>Drikkevare</b></a>
+    <div id="drinkDiv3" style="width: 80%;"></div>
+</div>
+
+    <div class="menupunkter table-div" style="display:table;">
+        <a id="durumTableBtn" style="display:table-cell;text-decoration: none;padding:50px;text-align:center;" 
+        onclick="jsGet.getDurumList()"><b>Durum</b></a>
         <br>
     <div id="durumDiv3" style="width: 80%"></div>
     </div>
