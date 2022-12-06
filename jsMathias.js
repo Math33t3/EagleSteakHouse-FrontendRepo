@@ -417,6 +417,12 @@ class JsGet {
         
         body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
         body.appendChild(tbl);
+        const pict = document.createElement('div');
+        const image = document.createElement('img');
+        image.src="burger.jpg";
+        image.style="width:175px; height:175px;"
+        pict.appendChild(image)
+        body.appendChild(pict)
     }   
 
 }
