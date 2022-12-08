@@ -357,6 +357,189 @@ class JsGet {
         body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
         body.appendChild(tbl);
     }
+    async getPizzaList() {
+        let url = "http://localhost:8080/getPizzaList";
+
+        let response = await fetch(url);
+        this.data = await response.json()
+        document.getElementById("pizzaTableBtn").style.display="none";
+        this.pizzatableCreate()
+    }
+ 
+    pizzatableCreate() {
+        const body = document.getElementById('pizzaDiv3');
+
+        const tbl = document.createElement('table');
+        tbl.classList.add("menupunkter");
+        tbl.classList.add("table-div");
+        
+        //laver et nested for loop. i bestmmer hvor mange rows tablen er
+        //j bestemmer hvor mange kolonner der er i hver linje a tablen
+        
+        for (let i = 0; i < this.data.length+1; i++) {
+            const tr = tbl.insertRow();
+
+            for (let j = 0; j < 5; j++) {
+                // starter med at lave første linje som beskriver indholdet 
+                if(j==0 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==1 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Pizza'));
+                    td.style.fontWeight="bold"
+                    td.style.fontSize="26px"
+                } if(j==2 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==3 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==4 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } 
+
+                if (j == 1 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].id));
+                } if (j == 2 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].name));
+                } if (j == 3 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].description));
+                } if (j == 4 && i>0) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(this.data[i-1].regPrice+'-'));
+                } if (j == 4 && i>0) {
+                    const td = tr.insertCell();
+                    if(this.data[i-1].bigPrice > 0){
+                    td.appendChild(document.createTextNode(this.data[i-1].bigPrice+'-'));
+                    } else{
+                        td.appendChild(document.createTextNode(' '))
+                    }
+                }
+            }
+        }
+        body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
+        body.appendChild(tbl);
+    }
+    async getLunchOfferList() {
+        //kan også laves på samme måde som vores dropdown hvis det er pænere
+        let url = "http://localhost:8080/getLunchOfferMenuList";
+
+        let response = await fetch(url);
+        this.data = await response.json()
+        document.getElementById("lunchofferTableBtn").style.display="none";
+        this.lunchoffertableCreate()
+    }
+ 
+    lunchoffertableCreate() {
+        const body = document.getElementById('lunchofferDiv3');
+
+        const tbl = document.createElement('table');
+        tbl.classList.add("menupunkter");
+        tbl.classList.add("table-div");
+        let burgerSet = this.data[0].burgerSet;
+        let chipsSet = this.data[0].chipsSet;
+        let dishSet = this.data[0].dishSet;
+        let drinkSet = this.data[0].drinkSet;
+        let durumSet = this.data[0].durumSet;
+        let menuSet = this.data[0].menuSet;
+        let pitaSet = this.data[0].pitaSet;
+        let pizzaSet = this.data[0].pizzaSet;
+        let pizzaSandwichSet = this.data[0].pizzaSandwichSet;
+        
+        //laver et nested for loop. 
+        //i bestemmer hvor mange rows tabellen har
+        //j bestemmer hvor mange kolonner der er i hver linje af tabellen
+        
+        for (let i = 0; i <burgerSet.length+chipsSet.length+dishSet.length+
+            drinkSet.length+durumSet.length+menuSet.length+pitaSet.length+
+            pizzaSet.length+pizzaSandwichSet.length+3; i++) {
+            const tr = tbl.insertRow();
+
+            for (let j = 0; j < 5; j++) {     
+                
+                if(j==0 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==1 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Frokost Menu'));
+                    td.style.fontWeight="bold"
+                    td.style.fontSize="26px"
+                } if(j==2 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==3 && i==0){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } 
+                if(j==0 && i==1){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==1 && i==1){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Pizza'));
+                    td.style.fontWeight="bold"
+            
+                } if(j==2 && i==1){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==3 && i==1){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } 
+                if (j == 1 && i>1 && i<8) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(pizzaSet[i-2].id));
+                } if (j == 2 && i>1 && i<8) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(pizzaSet[i-2].name));
+                } if (j == 3 && i>1 && i<8) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(pizzaSet[i-2].description));
+                } if (j == 4 && i>1 && i<8) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('54-'));
+                } 
+                if(j==0 && i==8){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } if(j==1 && i==8){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Pizza Sandwich'));
+                    td.style.fontWeight="bold"
+                } if(j==2 && i==8){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(''));
+                } if(j==3 && i==8){
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(' '));
+                } 
+
+                 if (j == 1 && i>8 && i<14) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(pizzaSandwichSet[i-9].id));
+                } if (j == 2 && i>8 && i<14) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(pizzaSandwichSet[i-9].name));
+                } if (j == 3 && i>8 && i<14) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(pizzaSandwichSet[i-9].description));
+                } if (j == 4 && i>8 && i<14) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('50-'));
+                }   
+            }
+        }
+        
+        body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
+        body.appendChild(tbl);
+
+    }
 
     async getBurgerList3() {
         //kan også laves på samme måde som vores dropdown hvis det er pænere
@@ -417,6 +600,7 @@ class JsGet {
         
         body.innerHTML= '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
         body.appendChild(tbl);
+        //Tilføjer et billede i bunden af vores div
         const pict = document.createElement('div');
         const image = document.createElement('img');
         image.src="burger.jpg";
