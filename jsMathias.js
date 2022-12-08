@@ -455,9 +455,7 @@ class JsGet {
         //i bestemmer hvor mange rows tabellen har
         //j bestemmer hvor mange kolonner der er i hver linje af tabellen
         
-        for (let i = 0; i <burgerSet.length+chipsSet.length+dishSet.length+
-            drinkSet.length+durumSet.length+menuSet.length+pitaSet.length+
-            pizzaSet.length+pizzaSandwichSet.length+3; i++) {
+        for (let i = 0; i <pizzaSet.length+pizzaSandwichSet.length+15; i++) {
             const tr = tbl.insertRow();
 
             for (let j = 0; j < 5; j++) {     
@@ -477,6 +475,7 @@ class JsGet {
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(' '));
                 } 
+                //indlæse de pizzaer der er i frokostmenuen
                 if(j==0 && i==1){
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(' '));
@@ -494,7 +493,7 @@ class JsGet {
                 } 
                 if (j == 1 && i>1 && i<8) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(pizzaSet[i-2].id));
+                    td.appendChild(document.createTextNode('F'+pizzaSet[i-2].id));
                 } if (j == 2 && i>1 && i<8) {
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(pizzaSet[i-2].name));
@@ -519,10 +518,10 @@ class JsGet {
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(' '));
                 } 
-
+                //indlæse de Pizzasandwich der er i frokostmenuen
                  if (j == 1 && i>8 && i<14) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(pizzaSandwichSet[i-9].id));
+                    td.appendChild(document.createTextNode('F'+pizzaSandwichSet[i-9].id));
                 } if (j == 2 && i>8 && i<14) {
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode(pizzaSandwichSet[i-9].name));
@@ -532,7 +531,164 @@ class JsGet {
                 } if (j == 4 && i>8 && i<14) {
                     const td = tr.insertCell();
                     td.appendChild(document.createTextNode('50-'));
-                }   
+                }  
+                //indlæse resten af frokostmenuen, som ikke stemmer overens med resten af menuen
+                if (j == 1 && i==14) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('F. Fisk'));
+                } if (j == 2 && i==14) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Fiskefilet'));
+                } if (j == 3 && i==14) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('2.stk med pommes frites og remoulade'));
+                } if (j == 4 && i==14) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('50-'));
+                }  
+
+                if (j == 1 && i==15) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('F. Pita'));
+                } if (j == 2 && i==15) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Hjemmelavet Pitabrød med en dåse sodavand'));
+                } if (j == 3 && i==15) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('frit valg mellem shawarma, kylling og falafel'));
+                } if (j == 4 && i==15) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('47-'));
+                }  
+                if (j == 1 && i==16) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('F. Durum'));
+                } if (j == 2 && i==16) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Hjemmelavet Durum med en dåse sodavand'));
+                } if (j == 3 && i==16) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('frit valg mellem shawarma, kylling og falafel'));
+                } if (j == 4 && i==16) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('57-'));
+                }  
+                if (j == 1 && i==17) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('F. Box'));
+                } if (j == 2 && i==17) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('med en dåse sodavand'));
+                } if (j == 3 && i==17) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('frit valg mellem shawarma, kylling og falafel'));
+                } if (j == 4 && i==17) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('55-'));
+                } 
+                if (j == 1 && i==18) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('F. Box'));
+                } if (j == 2 && i==18) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('med en dåse sodavand'));
+                } if (j == 3 && i==18) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('frit valg mellem shawarma, kylling og falafel'));
+                } if (j == 4 && i==18) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('55-'));
+                } 
+                if (j == 1 && i==19) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('F. Kyllinge Burger'));
+                } if (j == 2 && i==19) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Burger med en dåse sodavand'));
+                } if (j == 3 && i==19) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(''));
+                } if (j == 4 && i==19) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('50-'));
+                } 
+                if (j == 1 && i==20) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('F. Steak House Burger'));
+                } if (j == 2 && i==20) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Hjemmelavet Burger med en dåse sodavand'));
+                } if (j == 3 && i==20) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(''));
+                } if (j == 4 && i==20) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('50-'));
+                }                 
+                if (j == 1 && i==21) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('F. Hotdog'));
+                } if (j == 2 && i==21) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('med en dåse sodavand'));
+                } if (j == 3 && i==21) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(''));
+                } if (j == 4 && i==21) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('33-'));
+                } 
+                if (j == 1 && i==22) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('F. Sambuse'));
+                } if (j == 2 && i==22) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('med hummus eller tzatziki'));
+                } if (j == 3 && i==22) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(''));
+                } if (j == 4 && i==22) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('28-'));
+                } 
+                if (j == 1 && i==23) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('F. Kylling'));
+                } if (j == 2 && i==23) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('1/2 grilkylling'));
+                } if (j == 3 && i==23) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(''));
+                } if (j == 4 && i==23) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('45-'));
+                } 
+                if (j == 1 && i==24) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Pommes Frites'));
+                } if (j == 2 && i==24) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Medium'));
+                } if (j == 3 && i==24) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(''));
+                } if (j == 4 && i==24) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('25-'));
+                } if (j == 1 && i==25) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Pommes Frites'));
+                } if (j == 2 && i==25) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('Stor'));
+                } if (j == 3 && i==25) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode(''));
+                } if (j == 4 && i==25) {
+                    const td = tr.insertCell();
+                    td.appendChild(document.createTextNode('30-'));
+                }
             }
         }
         
