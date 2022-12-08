@@ -458,13 +458,6 @@ class JsGet {
         const tbl = document.createElement('table');
         tbl.classList.add("menupunkter");
         tbl.classList.add("table-div");
-        let burgerSet = this.data[0].burgerSet;
-        let chipsSet = this.data[0].chipsSet;
-        let dishSet = this.data[0].dishSet;
-        let drinkSet = this.data[0].drinkSet;
-        let durumSet = this.data[0].durumSet;
-        let menuSet = this.data[0].menuSet;
-        let pitaSet = this.data[0].pitaSet;
         let pizzaSet = this.data[0].pizzaSet;
         let pizzaSandwichSet = this.data[0].pizzaSandwichSet;
         
@@ -488,10 +481,10 @@ class JsGet {
                     td.style.color="red";
                 } if(j==2 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(' '));
+                    td.appendChild(document.createTextNode('Kl. 11:00 -'));
                 } if(j==3 && i==0){
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(' '));
+                    td.appendChild(document.createTextNode('15:00'));
                 } 
                 //indlæse de pizzaer der er i frokostmenuen
                 if(j==0 && i==1){

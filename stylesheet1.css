@@ -53,6 +53,7 @@ body {
     width: 200px;
     float: left;
     margin-left: 25px;
+    z-index: -1;
 }
 
 #logo2 {
@@ -60,6 +61,7 @@ body {
     width: 200px;
     float: right;
     margin-right: 25px;
+    z-index: -1;
 }
 
 #logo1div {
