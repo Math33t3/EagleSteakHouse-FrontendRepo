@@ -986,6 +986,7 @@ class JsGet {
         const body = document.getElementById('burgerDiv3');
 
         const tbl = document.createElement('table');
+        tbl.id="burgerTable";
         tbl.classList.add("menupunkter");
         tbl.classList.add("table-div");
 
@@ -1003,7 +1004,11 @@ class JsGet {
                     td.appendChild(document.createTextNode(' '));
                 } if (j == 1 && i == 0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Burgere'));
+                    td.appendChild(document.createElement('anchor'))
+                    td.innerHTML='Burgere';
+                    td.id='burgerButtonHide';
+
+                    //td.appendChild(document.createTextNode('Burgere'));
                     td.style.fontWeight = "bold"
                     td.style.fontSize = "26px"
                     td.style.color = "red";
@@ -1036,13 +1041,50 @@ class JsGet {
         body.appendChild(tbl);
         //Tilføjer et billede i bunden af vores div
         const pict = document.createElement('div');
+        pict.id="burgerPict";
         const image = document.createElement('img');
         image.src = "burger.jpg";
         image.style = "width:175px; height:175px;"
         pict.appendChild(image)
         body.appendChild(pict)
-    }
 
+        var hideagain = document.getElementById('burgerButtonHide')
+        hideagain.onclick = function(){hideburger()};
+        
+       // hideagain.onclick= this.hideburger();
+    }
+    
+
+       /* if (table.style.display === "none") {
+            table.style.display = "block";
+          } else {
+            table.style.display = "none";
+          }
+
+        if (pict.style.display === "none") {
+            pict.style.display = "block";
+          } else {
+            pict.style.display = "none";
+          }
+        if (button.style.display === "none") {
+            button.style.display = "block";
+          } else {
+            button.style.display = "none";
+          }*/
+          
+    //.style.display = "none";
+   // .style.display = "none";
+   // .style.display = "block";
+    
 }
 
 var jsGet = new JsGet()
+
+function hideburger(){
+    var table = document.getElementById("burgerTable");
+    var pict = document.getElementById("burgerPict");
+    var button = document.getElementById("burgerTableBtn");
+    table.style.display = "none";
+    pict.style.display = "none";
+    button.style.display = "block";
+}
