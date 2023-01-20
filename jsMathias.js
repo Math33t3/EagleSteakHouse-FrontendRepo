@@ -23,105 +23,105 @@ class JsGet {
         // lave et loop der udskriver dem i rækkefølge efter id så nr 1 altid er først.
     }
 
-    async getBurgerList() {
-        let url = "http://localhost:8080/getBurgerList";
-
-        let response = await fetch(url);
-        this.data = await response.json()
-        this.updateMyBurgerUI()
-    }
-
-    updateMyBurgerUI() {
-        const burgertable = document.getElementById("burgerDiv2");
-        const burgercolumn = document.createElement("burgerTable2");
-
-        burgercolumn.innerHTML = this.data[0].id + ' <br> ' + this.data[0].name
-            + ' <br> ' + this.data[0].regPrice + ' <br> ' + this.data[0].price + ' <br> ';
-        burgercolumn.classList.add("menupunkter");
-        burgercolumn.classList.add("table-div");
-        burgertable.append(burgercolumn);
-
-        const burgercolumn2 = document.createElement("burgerTable");
-
-        burgercolumn2.innerHTML = this.data[1].id + ' <br> ' + this.data[1].name
-            + ' <br> ' + this.data[1].description + ' <br> ' + this.data[1].price;
-        burgercolumn2.classList.add("menupunkter");
-        burgercolumn.classList.add("table-div");
-        burgertable.append(burgercolumn2);
-
-        // lave et loop der udskriver dem i rækkefølge efter id så nr 1 altid er først.
-    }
-
-    tableCreate() {
-
-
-        const body = document.body;
-
-        const tbl = document.createElement('table');
-        tbl.classList.add("menupunkter");
-        tbl.classList.add("table-div");
-
-
-        for (let i = 0; i < 3; i++) {
-            const tr = tbl.insertRow();
-            for (let j = 0; j < 3; j++) {
-                if (i === 2 && j === 1) {
-                    break;
-                } else {
-                    const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(`Cell I${i}/J${j}`));
+    /*    async getBurgerList() {
+            let url = "http://localhost:8080/getBurgerList";
+    
+            let response = await fetch(url);
+            this.data = await response.json()
+            this.updateMyBurgerUI()
+        }
+    
+        updateMyBurgerUI() {
+            const burgertable = document.getElementById("burgerDiv2");
+            const burgercolumn = document.createElement("burgerTable2");
+    
+            burgercolumn.innerHTML = this.data[0].id + ' <br> ' + this.data[0].name
+                + ' <br> ' + this.data[0].regPrice + ' <br> ' + this.data[0].price + ' <br> ';
+            burgercolumn.classList.add("menupunkter");
+            burgercolumn.classList.add("table-div");
+            burgertable.append(burgercolumn);
+    
+            const burgercolumn2 = document.createElement("burgerTable");
+    
+            burgercolumn2.innerHTML = this.data[1].id + ' <br> ' + this.data[1].name
+                + ' <br> ' + this.data[1].description + ' <br> ' + this.data[1].price;
+            burgercolumn2.classList.add("menupunkter");
+            burgercolumn.classList.add("table-div");
+            burgertable.append(burgercolumn2);
+    
+            // lave et loop der udskriver dem i rækkefølge efter id så nr 1 altid er først.
+        }
+    
+        tableCreate() {
+    
+    
+            const body = document.body;
+    
+            const tbl = document.createElement('table');
+            tbl.classList.add("menupunkter");
+            tbl.classList.add("table-div");
+    
+    
+            for (let i = 0; i < 3; i++) {
+                const tr = tbl.insertRow();
+                for (let j = 0; j < 3; j++) {
+                    if (i === 2 && j === 1) {
+                        break;
+                    } else {
+                        const td = tr.insertCell();
+                        td.appendChild(document.createTextNode(`Cell I${i}/J${j}`));
+                    }
                 }
             }
-        }
-        body.appendChild(tbl);
-    }
+            body.appendChild(tbl);
+        }*/
 
     // herfra skal getList og tableCreate metoder skrives om til at tage imod de andre typer af objekter. :)
-    async getBurgerList2() {
-        //kan også laves på samme måde som vores dropdown hvis det er pænere
-        let url = "http://localhost:8080/getBurgerList";
-
-        let response = await fetch(url);
-        this.data = await response.json()
-        this.burgertableCreate()
-    }
-
-    burgertableCreate() {
-        const body = document.getElementById('burgerDiv3');
-
-        const tbl = document.createElement('table');
-        tbl.classList.add("menupunkter");
-        tbl.classList.add("table-div");
-
-        //laver et nested for loop. i bestmmer hvor mange rows tablen er
-        //j bestemmer hvor mange kolonner der er i hver linje a tablen
-
-        for (let i = 0; i < this.data.length + 1; i++) {
-            const tr = tbl.insertRow();
-
-            for (let j = 0; j < 5; j++) {
-                if (j == 1 && i > 0) {
-                    const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i - 1].id));
-                    td.style.color = "red";
-                } if (j == 2 && i > 0) {
-                    const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i - 1].name));
-                    td.style.color = "green";
-                } if (j == 3 && i > 0) {
-                    const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i - 1].description));
-                } if (j == 4 && i > 0) {
-                    const td = tr.insertCell();
-                    td.appendChild(document.createTextNode(this.data[i - 1].price));
-                }
-            }
-        }
-
-        body.innerHTML = '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
-        body.appendChild(tbl);
-
-    }
+    /* async getBurgerList2() {
+         //kan også laves på samme måde som vores dropdown hvis det er pænere
+         let url = "http://localhost:8080/getBurgerList";
+ 
+         let response = await fetch(url);
+         this.data = await response.json()
+         this.burgertableCreate()
+     }
+ 
+     burgertableCreate() {
+         const body = document.getElementById('burgerDiv3');
+ 
+         const tbl = document.createElement('table');
+         tbl.classList.add("menupunkter");
+         tbl.classList.add("table-div");
+ 
+         //laver et nested for loop. i bestmmer hvor mange rows tablen er
+         //j bestemmer hvor mange kolonner der er i hver linje a tablen
+ 
+         for (let i = 0; i < this.data.length + 1; i++) {
+             const tr = tbl.insertRow();
+ 
+             for (let j = 0; j < 5; j++) {
+                 if (j == 1 && i > 0) {
+                     const td = tr.insertCell();
+                     td.appendChild(document.createTextNode(this.data[i - 1].id));
+                     td.style.color = "red";
+                 } if (j == 2 && i > 0) {
+                     const td = tr.insertCell();
+                     td.appendChild(document.createTextNode(this.data[i - 1].name));
+                     td.style.color = "green";
+                 } if (j == 3 && i > 0) {
+                     const td = tr.insertCell();
+                     td.appendChild(document.createTextNode(this.data[i - 1].description));
+                 } if (j == 4 && i > 0) {
+                     const td = tr.insertCell();
+                     td.appendChild(document.createTextNode(this.data[i - 1].price));
+                 }
+             }
+         }
+ 
+         body.innerHTML = '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
+         body.appendChild(tbl);
+ 
+     }*/
 
     async getMenuList() {
         let url = "http://localhost:8080/getMenuList";
@@ -634,6 +634,7 @@ class JsGet {
         const body = document.getElementById('pizzaDiv3');
 
         const tbl = document.createElement('table');
+        tbl.id = "pizzaTable"
         tbl.classList.add("menupunkter");
         tbl.classList.add("table-div");
 
@@ -650,7 +651,9 @@ class JsGet {
                     td.appendChild(document.createTextNode(' '));
                 } if (j == 1 && i == 0) {
                     const td = tr.insertCell();
-                    td.appendChild(document.createTextNode('Pizza'));
+                    td.appendChild(document.createElement('anchor'));
+                    td.innerHTML = "Pizza"
+                    td.id = 'pizzaButtonHide'
                     td.style.fontWeight = "bold"
                     td.style.fontSize = "26px"
                     td.style.color = "red";
@@ -691,6 +694,8 @@ class JsGet {
         }
         body.innerHTML = '' // her overwrite vi vores div, hvis der nu allerede er en table, så nulstiller vi
         body.appendChild(tbl);
+        let hideagain = document.getElementById('pizzaButtonHide');
+        hideagain.onclick = function(){ hidepizza()};
     }
     async getLunchOfferList() {
         //kan også laves på samme måde som vores dropdown hvis det er pænere
@@ -986,7 +991,7 @@ class JsGet {
         const body = document.getElementById('burgerDiv3');
 
         const tbl = document.createElement('table');
-        tbl.id="burgerTable";
+        tbl.id = "burgerTable";
         tbl.classList.add("menupunkter");
         tbl.classList.add("table-div");
 
@@ -1005,8 +1010,8 @@ class JsGet {
                 } if (j == 1 && i == 0) {
                     const td = tr.insertCell();
                     td.appendChild(document.createElement('anchor'))
-                    td.innerHTML='Burgere';
-                    td.id='burgerButtonHide';
+                    td.innerHTML = 'Burgere';
+                    td.id = 'burgerButtonHide';
 
                     //td.appendChild(document.createTextNode('Burgere'));
                     td.style.fontWeight = "bold"
@@ -1041,50 +1046,55 @@ class JsGet {
         body.appendChild(tbl);
         //Tilføjer et billede i bunden af vores div
         const pict = document.createElement('div');
-        pict.id="burgerPict";
+        pict.id = "burgerPict";
         const image = document.createElement('img');
         image.src = "burger.jpg";
         image.style = "width:175px; height:175px;"
         pict.appendChild(image)
         body.appendChild(pict)
 
-        var hideagain = document.getElementById('burgerButtonHide')
-        hideagain.onclick = function(){hideburger()};
-        
-       // hideagain.onclick= this.hideburger();
+        let hideagain = document.getElementById('burgerButtonHide')
+        hideagain.onclick = function () { hideburger() };
+
+        //hideagain.onclick = this.hideburger();
     }
-    
-
-       /* if (table.style.display === "none") {
-            table.style.display = "block";
-          } else {
-            table.style.display = "none";
-          }
-
-        if (pict.style.display === "none") {
-            pict.style.display = "block";
-          } else {
-            pict.style.display = "none";
-          }
-        if (button.style.display === "none") {
-            button.style.display = "block";
-          } else {
-            button.style.display = "none";
-          }*/
-          
-    //.style.display = "none";
-   // .style.display = "none";
-   // .style.display = "block";
-    
 }
 
 var jsGet = new JsGet()
 
-function hideburger(){
-    var table = document.getElementById("burgerTable");
-    var pict = document.getElementById("burgerPict");
-    var button = document.getElementById("burgerTableBtn");
-    table.style.display = "none";
-    pict.style.display = "none";
-    button.style.display = "block";
+function hideburger() {
+    let table = document.getElementById("burgerTable");
+    let pict = document.getElementById("burgerPict");
+    let button = document.getElementById("burgerTableBtn");
+    if (table.style.display === "none") {
+        table.style.display = "block";
+    } else {
+        table.style.display = "none";
+    }
+
+    if (pict.style.display === "none") {
+        pict.style.display = "block";
+    } else {
+        pict.style.display = "none";
+    }
+    if (button.style.display === "none") {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+
+}
+function hidepizza() {
+    let table = document.getElementById("pizzaTable");
+    let button = document.getElementById("pizzaTableBtn");
+    if (table.style.display === "none") {
+        table.style.display = "block";
+    } else {
+        table.style.display = "none";
+    }
+    if (button.style.display === "none") {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
 }

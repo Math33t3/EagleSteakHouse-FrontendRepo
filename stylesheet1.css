@@ -69,8 +69,9 @@ body {
 #logo1 {
     height: 200px;
     width: 200px;
+    margin-top: 25px;
     float: left;
-    margin-left: 25px;
+    margin-left: 27px;
     z-index: -1;
 }
 
@@ -146,7 +147,8 @@ td {
 
 .mySlides {
     margin-left: 25%;
-    width: 100%
+    margin-right: 25%;
+    width: 65%
 }
 
 .googlePin {
@@ -311,3 +313,9 @@ td {
     font-family: Garamond, serif;
     /*font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 }*/
+
+#dynamisk{
+    background-color: azure;
+    color: black;
+    
+}
